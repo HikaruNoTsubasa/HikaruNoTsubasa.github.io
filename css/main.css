@@ -5,6 +5,9 @@
 .start-box {
   flex: 1; }
 
+.start-link {
+  cursor: pointer; }
+
 .copyright {
   text-align: center; }
 
