@@ -1,0 +1,11 @@
+.wrap_row {
+  flex-direction: column;
+  min-height: 100vh; }
+
+.start-box {
+  flex: 1; }
+
+.copyright {
+  text-align: center; }
+
+/*# sourceMappingURL=main.css.map */
