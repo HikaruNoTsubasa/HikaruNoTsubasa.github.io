@@ -11,4 +11,20 @@
 .copyright {
   text-align: center; }
 
+@keyframes signPlay {
+  100% {
+    background-position: -737px -2px; } }
+
+.signing {
+  width: 145px;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  background: url("../images/sprites-signing.png") no-repeat -2px -2px; }
+  .signing.active {
+    animation: signPlay 0.8s steps(5) infinite; }
+
+.countdown {
+  display: none; }
+
 /*# sourceMappingURL=main.css.map */

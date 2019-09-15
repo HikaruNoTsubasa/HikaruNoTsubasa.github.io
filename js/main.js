@@ -20,17 +20,38 @@ class RichForYou {
       sp: '長壽佛',
       url: 'https://www.youtube.com/watch?v=o67Ui8khQjk'
     }];
+
+    this.guestTime = (() => {
+      const now = new Date();
+      const [_year, _month, _day, _hours, _minutes, _seconds] = [now.getFullYear(), now.getMonth() + 1, now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds()];
+      return `${_year}-${_month}-${_day} ${_hours}:${_minutes}:${_seconds}`;
+    })();
+
+    this.guestIpObj = (() => {
+      const apikey = '69ad1df9-6265-46e6-bd8d-3936a46a1a00';
+      return $.getJSON(`https://api.smartip.io/?api_key=${apikey}`);
+    })();
   }
 
   startGame() {
-    this.jqStart.find('.start-link').on('click', e => {
-      const _this = $(e.currentTarget);
+    $('#signStart').on('click', e => {
+      e.preventDefault();
+      $('#signing').addClass('active');
+      $('#countdown').show();
+      this.saveToGdrive('play');
+      let countdownTime = 1000 * 3 // 倒數 n 秒
+      ;
+      !function MyCounter() {
+        if (countdownTime <= 0) {
+          $('#countdown').hide();
+          $('#signing').removeClass('active');
+        } else {
+          $('#countdown__value').text(countdownTime / 1000);
+          setTimeout(MyCounter, 1000);
+        }
 
-      const _index = this.jqStart.find('.start-link').index(_this);
-
-      this.gameAnswer(_index);
-      this.jqStart.stop(true, true).slideUp('fast');
-      $('.alert').removeClass('invisible');
+        countdownTime -= 1000;
+      }();
     });
   }
 
@@ -43,14 +64,45 @@ class RichForYou {
     }
 
     $('#alertMsg').text('').text(alertMsg);
-    $('#blessing').text('').text(`${_bless.sp}加持`).parent().on('click', e => {
-      e.preventDefault();
-      window.location.href = _bless.url;
-    });
+    $('#blessing').text('').text(`${_bless.sp}加持`);
     $('#readMore').on('click', e => {
       e.preventDefault();
       this.jqStart.stop(true, true).slideDown('fast');
       $('.alert').addClass('invisible');
+    });
+    $('#subscribe').on('click', e => {
+      e.preventDefault();
+    });
+  }
+
+  ytSubscribe() {
+    const ytSets = {
+      url: 'https://www.googleapis.com/youtube/v3/subscriptions',
+      channelId: 'UCCtXYzHX4BITjdGCE8i3adQ'
+    };
+    const apiKeySets = {
+      key: 'AIzaSyCv6tg95Y5UirOdT-qQ15rWEti_67KlrOI'
+    };
+  }
+
+  saveToGdrive(guestStatus) {
+    console.log(this.guestIpObj);
+    const clientObj = this.guestIpObj.responseJSON;
+    const ajaxOpts = {
+      url: 'https://script.google.com/macros/s/AKfycbxgfyVf9xXWTEVz7ck_lLcIqhlE7MTb159wYbKq_mhPCqhOwh2j/exec',
+      data: {
+        method: 'write',
+        time: this.guestTime,
+        ip: clientObj.ip,
+        browser: clientObj['user-agent'].name,
+        status: guestStatus,
+        note: clientObj.location.city
+      }
+    };
+    $.ajax({
+      type: 'post',
+      data: ajaxOpts.data,
+      url: ajaxOpts.url
     });
   }
 
@@ -62,5 +114,7 @@ class RichForYou {
 
 $(() => {
   const richObj = new RichForYou('#start-box');
-  richObj.main();
+  richObj.main(); // gapi.load("client:auth2", function() {
+  //     gapi.auth2.init({client_id: "35925579276-q9tqfg61qhturs062qsddt4opkiptc1p.apps.googleusercontent.com"});
+  //   });
 });
