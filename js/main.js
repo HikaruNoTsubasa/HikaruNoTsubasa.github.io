@@ -28,8 +28,8 @@ class RichForYou {
     })();
 
     this.guestIpObj = (() => {
-      const apikey = '69ad1df9-6265-46e6-bd8d-3936a46a1a00';
-      return $.getJSON(`https://api.smartip.io/?api_key=${apikey}`);
+      const ipifyUrl = 'https://api.ipify.org?format=jsonp&callback=?';
+      return $.getJSON(ipifyUrl);
     })();
   }
 
@@ -75,28 +75,18 @@ class RichForYou {
     });
   }
 
-  ytSubscribe() {
-    const ytSets = {
-      url: 'https://www.googleapis.com/youtube/v3/subscriptions',
-      channelId: 'UCCtXYzHX4BITjdGCE8i3adQ'
-    };
-    const apiKeySets = {
-      key: 'AIzaSyCv6tg95Y5UirOdT-qQ15rWEti_67KlrOI'
-    };
-  }
-
   saveToGdrive(guestStatus) {
-    console.log(this.guestIpObj);
-    const clientObj = this.guestIpObj.responseJSON;
+    const _ip = this.guestIpObj.responseJSON.ip || '';
+
     const ajaxOpts = {
       url: 'https://script.google.com/macros/s/AKfycbxgfyVf9xXWTEVz7ck_lLcIqhlE7MTb159wYbKq_mhPCqhOwh2j/exec',
       data: {
         method: 'write',
         time: this.guestTime,
-        ip: clientObj.ip,
-        browser: clientObj['user-agent'].name,
+        ip: _ip,
+        browser: FRUBIL.client.name,
         status: guestStatus,
-        note: clientObj.location.city
+        note: `${FRUBIL.client.os}`
       }
     };
     $.ajax({
@@ -114,7 +104,5 @@ class RichForYou {
 
 $(() => {
   const richObj = new RichForYou('#start-box');
-  richObj.main(); // gapi.load("client:auth2", function() {
-  //     gapi.auth2.init({client_id: "35925579276-q9tqfg61qhturs062qsddt4opkiptc1p.apps.googleusercontent.com"});
-  //   });
+  richObj.main();
 });
