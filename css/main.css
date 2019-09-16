@@ -1,6 +1,15 @@
-.wrap_row {
-  flex-direction: column;
-  min-height: 100vh; }
+body {
+  min-height: 100vh;
+  background-image: url("../images/main-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
+.wrap {
+  height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center; }
 
 .start-box {
   flex: 1; }
@@ -25,6 +34,53 @@
     animation: signPlay 0.8s steps(5) infinite; }
 
 .countdown {
+  display: none; }
+
+.answer-box {
+  position: fixed;
+  bottom: 5%;
+  width: 90%;
+  left: 5%;
+  display: none; }
+
+.answer-sub {
+  width: 100%;
+  min-height: 500px;
+  background-image: url("../images/answer-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.answer-title {
+  display: flex;
+  line-height: 1;
+  align-items: center; }
+  .answer-title::before {
+    content: '';
+    display: block;
+    vertical-align: middle;
+    background-image: url("../images/sign.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 20.25px;
+    height: 75px; }
+
+.answer-mv {
+  position: relative;
+  width: 80%;
+  height: 200px; }
+  .answer-mv iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.subscribe-box {
   display: none; }
 
 /*# sourceMappingURL=main.css.map */

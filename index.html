@@ -19,7 +19,7 @@
         <div class="col-12 text-center">
             <div id="signing" class="signing"></div>
             <br>
-            <button class="btn btn-info signStart" id="signStart">抽籤…</button>
+            <button class="btn btn-danger signStart" id="signStart">觀音山吉祥籤</button>
             <br>
             <div id="countdown" class="alert alert-warning countdown">
                 雙手合十，虔誠祈求默禱 <span id="countdown__value" class="countdown__value"></span> 秒鐘…
@@ -32,31 +32,28 @@
             
 
             
-<div id="start-box" class="container start-box">
-    <div class="row"></div>
-</div>
-
-<div class="invisible alert alert-success">
-    <p id="alertMsg"></p>
+<div id="js-answer" class="answer-box">
+    <div class="answer-sub">
+        <h1 id="js-answerTitle" class="answer-title"></h1>
+        <p id="js-answerDesc" class="answer-desc"></p>
+        <div class="answer-mv">
+            <div id="ytplayer"></div>
+            <script src="https://www.youtube.com/player_api"></script>
+        </div>
+    </div>
     <div class="col text-center">
-        <div class="btn-group">
-            <button class="btn btn-info" id="readMore">再來一次</button>
-            <button class="btn btn-danger" id="subscribe">立馬訂閱《法藏》頻道，獨門<span id="blessing" class="blessing"></span>與您分享！</button>
+        <button class="btn btn-success" id="subscribe">打開幸福之鑰</button>
+        <div id="js-subscribe" class="subscribe-box">
+            <div class="g-ytsubscribe" data-channelid="UCCtXYzHX4BITjdGCE8i3adQ" data-layout="default" data-theme="dark" data-count="hidden"></div>
         </div>
     </div>
 </div>
 
 <script src="https://apis.google.com/js/platform.js"></script>
 
-<div class="g-ytsubscribe" data-channelid="UCCtXYzHX4BITjdGCE8i3adQ" data-layout="default" data-theme="dark" data-count="hidden"></div>
 
 
-
-
-            <footer class="copyright">
-    （或者是做成轉盤的樣式也是一種方式，總之，就是有一個互動式的介面吸引使用者…）
-</footer>
-
+            
         </div>
     </div>
 
