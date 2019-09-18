@@ -149,10 +149,9 @@ class RichForYou {
   }
 
   main() {
-    this.devSet();
+    // this.devSet()
     this.startGame();
-    this.gameAnswer();
-    this.devMode();
+    this.gameAnswer(); // this.devMode()
   }
 
 }
