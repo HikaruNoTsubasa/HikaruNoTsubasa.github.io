@@ -3,6 +3,9 @@
 class RichForYou {
   constructor(jqStart) {
     this.jqStart = $(jqStart);
+    this.states = {
+      countdownTime: 10
+    };
     this.bless = [{
       method: '越施越富',
       sp: '財寶天王',
@@ -54,23 +57,44 @@ class RichForYou {
     });
   }
 
+  gameBody(status = 'entry') {
+    switch (status) {
+      case 'entry':
+        $('#countdown').show();
+        $('#signing').addClass('active');
+        $('#signStart').prop('disabled', true);
+        $('#js-blessing').addClass('active').fadeIn('fast');
+        break;
+
+      default:
+        $('#countdown').hide();
+        $('#signing').removeClass('active');
+        $('#signStart').prop('disabled', false);
+        $('#js-blessing').removeClass('active').fadeOut('slow');
+        let fancyboxDefaults = $.fancybox.defaults;
+        fancyboxDefaults.animationEffect = "zoom-in-out";
+        $.fancybox.open({
+          src: '#js-answer',
+          type: 'inline',
+          opts: {
+            afterShow: function (instance, current) {}
+          }
+        });
+    }
+  }
+
   startGame() {
     $('#signStart').on('click', e => {
       e.preventDefault();
-      $(e.currentTarget).prop('disabled', true);
-      $('#signing').addClass('active');
-      $('#countdown').show();
+      const gameBody = this.gameBody;
+      gameBody();
       this.saveToGdrive('play');
-      let countdownTime = 1000 * 3 // 倒數 n 秒
+      let countdownTime = 1000 * this.states.countdownTime // 倒數 n 秒
       ;
       !function MyCounter() {
         if (countdownTime <= 0) {
-          $('#countdown').hide();
-          $('#signing').removeClass('active');
-          $(e.currentTarget).prop('disabled', false);
-          $('#js-answer').slideDown();
+          gameBody('back');
         } else {
-          $('#countdown__value').text(countdownTime / 1000);
           setTimeout(MyCounter, 1000);
         }
 
@@ -108,9 +132,18 @@ class RichForYou {
     });
   }
 
+  devSet() {
+    this.states.countdownTime = 1;
+  }
+
+  devMode() {
+    $('#signStart').trigger('click');
+  }
+
   main() {
+    // this.devSet()
     this.startGame();
-    this.gameAnswer();
+    this.gameAnswer(); // this.devMode()
   }
 
 }

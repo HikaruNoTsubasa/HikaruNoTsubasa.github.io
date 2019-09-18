@@ -29,32 +29,70 @@ body {
   height: 300px;
   display: inline-block;
   overflow: hidden;
-  background: url("../images/sprites-signing.png") no-repeat -2px -2px; }
+  background: url("../images/sprites-signing.png") no-repeat 2px -2px; }
   .signing.active {
     animation: signPlay 0.8s steps(5) infinite; }
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: -113px; }
+  to {
+    stroke-dashoffset: 0; } }
+
+.blessing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: none; }
+  .blessing__fig {
+    position: relative; }
+  .blessing__countdown {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-right: -22px;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg); }
+  .blessing__cir {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: rgba(1, 68, 125, 0.5);
+    fill: none; }
+  .blessing.active .blessing__cir {
+    animation: countdown 10s linear forwards; }
+  .blessing .alert {
+    margin-left: 15px;
+    margin-right: 15px; }
 
 .countdown {
   display: none; }
 
 .answer-box {
-  position: fixed;
-  bottom: 5%;
-  width: 90%;
-  left: 5%;
-  display: none; }
+  display: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px 10px 50px;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 30px 33px 54px 31px;
+  border-image-source: url("../images/answer-bg.png");
+  border-image-slice: 30 33 54 31 fill;
+  border-image-width: 30px 33px 54px 31px;
+  border-image-repeat: stretch; }
 
 .answer-sub {
-  width: 100%;
-  min-height: 500px;
-  background-image: url("../images/answer-bg.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 2em; }
 
 .answer-title {
   display: flex;
@@ -81,6 +119,16 @@ body {
     height: 100%; }
 
 .subscribe-box {
+  display: none;
+  margin-top: 0.5em;
+  position: absolute;
+  left: 50%;
+  margin-left: -42.5px; }
+
+.fancybox-is-open .fancybox-bg {
+  opacity: .6; }
+
+.fancybox-close-small {
   display: none; }
 
 /*# sourceMappingURL=main.css.map */
