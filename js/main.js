@@ -54,6 +54,7 @@ class RichForYou {
       e.preventDefault();
       this.saveToGdrive('subscribe');
       $('#js-subscribe').fadeIn('fast');
+      $(e.currentTarget).remove();
     });
   }
 
@@ -69,7 +70,6 @@ class RichForYou {
       default:
         $('#countdown').hide();
         $('#signing').removeClass('active');
-        $('#signStart').prop('disabled', false);
         $('#js-blessing').removeClass('active').fadeOut('slow');
         let fancyboxDefaults = $.fancybox.defaults;
         fancyboxDefaults.animationEffect = "zoom-in-out";
@@ -77,7 +77,9 @@ class RichForYou {
           src: '#js-answer',
           type: 'inline',
           opts: {
-            afterShow: function (instance, current) {}
+            afterClose: (instance, current) => {
+              $('#signStart').prop('disabled', false);
+            }
           }
         });
     }
