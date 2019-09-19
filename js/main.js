@@ -53,13 +53,14 @@ class RichForYou {
         videoId: _bless.videoId
       });
     } catch (msg) {
-      console.log('YT api include error.');
+      const videoTmp = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${_bless.videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      $('.answer-mv').append(videoTmp);
     }
 
     $('#subscribe').on('click', e => {
       e.preventDefault();
       this.saveToGdrive('subscribe');
-      $('#js-subscribe').fadeIn('fast');
+      $('#js-subscribe').addClass('active');
       $(e.currentTarget).remove();
     });
   }
@@ -159,4 +160,7 @@ class RichForYou {
 $(() => {
   const richObj = new RichForYou('#start-box');
   richObj.main();
+});
+window.addEventListener('load', event => {
+  $('#js-loader').fadeOut('slow');
 });
