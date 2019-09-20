@@ -7,20 +7,20 @@ class RichForYou {
       countdownTime: 10
     };
     this.bless = [{
-      method: '想要增長福德、壽命、智慧',
-      sp: '每天聽此咒，可累積無數善緣及財富！<br>「嗡 臧巴拉 雜列 扎耶 梭哈」',
+      fortune: '上上',
+      sp: '明年無論在事業、工作、人際關係...各方面都非常的得心應手，做甚麼事情都能稱心如意，明年也會讓您忙的非常有功德。但要多多行善、多關心家人，注意自己身體健康、盡量有規律的生活。 ',
       videoId: 'pLFNEsBY8Rs'
     }, {
-      method: '想要增加好人緣',
-      sp: '服務大家的事情，廣結善緣的事情要多做，不要一點福都沒有了，還在那裡嬌縱，孤芳自賞。覺得好像自己很了不起，你不跟我互動，我才不屑跟你互動，還傻到這樣，你都已經沒福了，沒有福報。',
+      fortune: '大吉',
+      sp: '明年無論在事業、工作、人際關係...各方面都非常的得心應手，做甚麼事情都能稱心如意，明年也會讓您忙的非常有功德。但要多多行善、多關心家人，注意自己身體健康、盡量有規律的生活。 ',
       videoId: '18k1ljJ0SnA'
     }, {
-      method: '想要開啟智慧',
-      sp: '搞不清楚就不叫智慧，在那邊模模糊糊的模稜兩可，我知道，可是我做不到，那叫沒有智慧。有智慧，你看文殊菩薩代表智慧的大菩薩，劍都指著自已的頭，對不對？當斷則斷，沒有那邊藕斷絲連的，該怎麼做，就怎麼做，非常的清楚，非常的分明。',
+      fortune: '上吉',
+      sp: '明年無論在事業、工作、人際關係...各方面都非常的得心應手，做甚麼事情都能稱心如意，明年也會讓您忙的非常有功德。但要多多行善、多關心家人，注意自己身體健康、盡量有規律的生活。 ',
       videoId: 'C-LXky2LT5o'
     }, {
-      method: '想要長壽健康',
-      sp: '唯有戒殺護生',
+      fortune: '中吉',
+      sp: '明年無論在事業、工作、人際關係...各方面都非常的得心應手，做甚麼事情都能稱心如意，明年也會讓您忙的非常有功德。但要多多行善、多關心家人，注意自己身體健康、盡量有規律的生活。 ',
       videoId: 'o67Ui8khQjk'
     }];
 
@@ -43,8 +43,8 @@ class RichForYou {
 
     const maxNumber = this.bless.length;
     const _bless = this.bless[indexRandom(maxNumber)];
-    $('#js-answerTitle').text(_bless.method);
-    $('#js-answerDesc').html(`${_bless.sp}`);
+    $('#js-fortune').text(_bless.fortune);
+    $('#js-answerDestSub').html(_bless.sp);
 
     try {
       let player = new YT.Player('ytplayer', {
@@ -97,18 +97,15 @@ class RichForYou {
       e.preventDefault();
       const gameBody = this.gameBody;
       gameBody();
-      this.saveToGdrive('play');
-      let countdownTime = 1000 * this.states.countdownTime // 倒數 n 秒
-      ;
-      !function MyCounter() {
-        if (countdownTime <= 0) {
-          gameBody('back');
-        } else {
-          setTimeout(MyCounter, 1000);
-        }
-
-        countdownTime -= 1000;
-      }();
+      this.saveToGdrive('play'); // let countdownTime = 1000 * this.states.countdownTime // 倒數 n 秒
+      // ;!function MyCounter() {
+      //     if(countdownTime <= 0) {
+      //         gameBody('back')
+      //     } else {
+      //         setTimeout(MyCounter, 1000)
+      //     }
+      //     countdownTime -= 1000
+      // }()
     });
   }
 
@@ -152,7 +149,8 @@ class RichForYou {
   main() {
     // this.devSet()
     this.startGame();
-    this.gameAnswer(); // this.devMode()
+    this.gameAnswer();
+    this.devMode();
   }
 
 }
