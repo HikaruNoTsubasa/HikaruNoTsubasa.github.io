@@ -97,15 +97,18 @@ class RichForYou {
       e.preventDefault();
       const gameBody = this.gameBody;
       gameBody();
-      this.saveToGdrive('play'); // let countdownTime = 1000 * this.states.countdownTime // 倒數 n 秒
-      // ;!function MyCounter() {
-      //     if(countdownTime <= 0) {
-      //         gameBody('back')
-      //     } else {
-      //         setTimeout(MyCounter, 1000)
-      //     }
-      //     countdownTime -= 1000
-      // }()
+      this.saveToGdrive('play');
+      let countdownTime = 1000 * this.states.countdownTime // 倒數 n 秒
+      ;
+      !function MyCounter() {
+        if (countdownTime <= 0) {
+          gameBody('back');
+        } else {
+          setTimeout(MyCounter, 1000);
+        }
+
+        countdownTime -= 1000;
+      }();
     });
   }
 
@@ -149,8 +152,7 @@ class RichForYou {
   main() {
     // this.devSet()
     this.startGame();
-    this.gameAnswer();
-    this.devMode();
+    this.gameAnswer(); // this.devMode()
   }
 
 }
