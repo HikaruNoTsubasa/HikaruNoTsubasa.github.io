@@ -68,7 +68,7 @@ class RichForYou {
     $('#subscribe').on('click', e => {
       e.preventDefault();
 
-      const _url = $(e.currentTarget).attr('href');
+      const _url = $(e.currentTarget).data('href');
 
       $(e.currentTarget).prop('disabled', true);
       this.saveToGdrive('subscribe', _url);
