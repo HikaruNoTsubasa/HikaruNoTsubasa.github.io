@@ -15,6 +15,13 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
+    <div id="js-loader" class="loader-box">
+        <div class="loader-sub">
+            <img src="./images/signing.png" alt="loader" class="loader-img">
+            <div class="lds-ripple"><div></div><div></div></div>
+        </div>
+    </div>
+
     <div id="wrap" class="container wrap">
         <div class="row wrap_row">
             <header class="container">
@@ -24,7 +31,8 @@
             <br>
             <div class="alert alert-info">
                 <i class="fa fa-angle-double-down"></i>
-                2019年又到尾聲了，想知道您2020年的運勢為何？
+                2019年將進入尾聲，新的一年即將到來<br />
+        想知道您2020的運勢為何？
             </div>
             <button class="btn btn-danger ripple signStart" id="signStart">
                 觀音山吉祥籤
@@ -46,49 +54,37 @@
                 <circle class="blessing__cir" r="17" cx="20" cy="20"></circle>
             </svg>
         </div>
-        <div class="alert alert-warning text-center">雙手誠心合十…<wbr>祈求佛菩薩加持善願必成</div>
+        <div class="alert alert-warning text-center">閉上眼，誠心向諸佛菩薩祈求<br />
+        抽一隻 #觀音山吉祥籤</div>
     </div>
 </div>
 
 <div id="js-answer" class="answer-box">
     <div class="answer-sub">
-        <h1 id="js-answerTitle" class="answer-title">您抽到的是，<span id="js-fortune"></span></h1>
-        <p id="js-answerDesc" class="answer-desc">
-            <div id="js-answerDestSub"></div><br>
-            以下是慈悲的 龍德上師對您明年運勢的一段珍貴開示，趕緊去看看吧！
-        </p>
+        <h1 id="js-answerTitle" class="answer-title">您抽到的是，<span id="js-fortune" class="fortune-value"></span></h1>
+        <div id="js-answerDesc" class="answer-desc">
+            <div id="js-answerDestSub"></div>
+            <br>以下是慈悲的 龍德上師對您明年運勢的一段珍貴開示，趕緊去看看吧！
+        </div>
         <div class="answer-mv">
             <div id="ytplayer"></div>
             <script src="https://www.youtube.com/player_api"></script>
         </div>
     </div>
     <div class="col text-center">
-        <button class="btn btn-success ripple" id="subscribe">
-            <i class="fa fa-key"></i>
-            打開幸福之鑰
-        </button>
-        <div id="js-subscribe" class="subscribe-box">
-            <div class="g-ytsubscribe" data-channelid="UCCtXYzHX4BITjdGCE8i3adQ" data-layout="full" data-count="hidden"></div>
-            <footer class="subscribe-note">
-                立馬訂閱
-                <i class="fa fa-arrow-up"></i>
-            </footer>
-        </div>
+        <a href="https://www.youtube.com/channel/UCGzTBw9ZYEpjmVbZNIZy-1A?sub_confirmation=1" class="btn btn-success ripple" id="subscribe">
+            訂閱 觀音山法藏 YouTube <wbr><i class="fa fa-key"></i> 開啟人生智慧
+        </a>
+        <footer class="subscribe-note">
+            <i class="fa fa-arrow-up"></i>
+            訂閱 + 開啟小鈴鐺<br>收到最新開示與直播通知!
+        </footer>
     </div>
 </div>
-
-<script src="https://apis.google.com/js/platform.js"></script>
 
 
 
             
-        </div>
-    </div>
-
-    <div id="js-loader" class="loader-box">
-        <div class="loader-sub">
-            <img src="./images/signing.png" alt="loader" class="loader-img">
-            <div class="lds-ripple"><div></div><div></div></div>
         </div>
     </div>
 

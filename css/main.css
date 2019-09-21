@@ -4,12 +4,20 @@ body {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover; }
+  body::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url("../images/answer-bg.png") url("../images/buddha.png") url("../images/main-bg.jpg") url("../images/signing.png") url("../images/sprites-signing.png") url("../images/sign.png") ; }
 
 .wrap {
   height: 90vh;
   display: flex;
   align-items: flex-end;
-  justify-content: center; }
+  justify-content: center;
+  visibility: hidden; }
 
 .start-box {
   flex: 1; }
@@ -109,14 +117,14 @@ body {
   overflow: hidden;
   background-color: transparent;
   width: 100%;
-  padding: 30px 10px 100px;
+  padding: 30px 15px;
   border-color: transparent;
   border-style: solid;
-  border-width: 30px 33px 54px 31px;
+  border-width: 32px 33px 55px 26px;
   border-image-source: url("../images/answer-bg.png");
-  border-image-slice: 30 33 54 31 fill;
-  border-image-width: 30px 33px 54px 31px;
-  border-image-repeat: stretch; }
+  border-image-slice: 32 33 55 26 fill;
+  border-image-width: 32px 33px 55px 26px;
+  border-image-repeat: round; }
 
 .answer-sub {
   position: relative;
@@ -126,21 +134,27 @@ body {
   margin-bottom: 2em; }
 
 .answer-title {
-  line-height: 1.2;
-  font-size: 1.8rem;
+  line-height: 1;
+  font-size: 6vw;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  white-space: nowrap; }
+  .answer-title .fortune-value {
+    font-size: 10vw; }
   .answer-title::before {
     content: '';
     display: inline-flex;
-    flex: 0 0 20.25px;
+    flex: 0 0 20px;
     margin-right: .2em;
     background-image: url("../images/sign.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
-    width: 20.25px;
-    height: 75px; }
+    width: 20px;
+    height: 62.5px; }
+
+.answer-desc {
+  font-size: 4.5w; }
 
 .answer-mv {
   position: relative;
