@@ -4,7 +4,7 @@ class RichForYou {
   constructor(jqStart) {
     this.jqStart = $(jqStart);
     this.states = {
-      countdownTime: 10
+      countdownTime: 5
     };
     this.bless = [{
       fortune: '上上籤',
@@ -25,7 +25,8 @@ class RichForYou {
     }, {
       fortune: '中平籤',
       sp: '平順就是福！2020年腳踏實地、穩紮穩打的把基本功練好吧！無論是該補足的技能、該經營的人脈、該修補的關係，努力的積資淨障、廣結善緣吧！<br><br>2020年建議您不要好高騖遠，坐這山望那山，就依循您最初設定的目標，穩健的步伐向前邁去吧！當在您想要做些什麼改變的時候，會有些許違緣逆境來障礙，不要擔心， ',
-      videoId: 'f3H4xfKbwWA&t=291s'
+      videoId: 'f3H4xfKbwWA',
+      videoStart: 291
     }, {
       fortune: '中下籤',
       sp: '看到自己的問題，努力改變吧！2020年對您來說是勇敢面對自己問題的一年，會有許多緣境在2020年都相繼伴隨發生了，不斷地調整修補、懺悔業障。要相信『命由我作、福自己求』，只要能多行善積德，積極地和冤親債主求解冤釋結，一切會大不相同！<br><br>2020年看來，您要有比以往更多的耐心、同理心來面對處理生活中的大小事，',
@@ -49,19 +50,31 @@ class RichForYou {
       return Math.floor(Math.random() * (+maxNumber - +minNumber)) + +minNumber;
     };
 
-    const maxNumber = this.bless.length;
-    const _bless = this.bless[indexRandom(maxNumber)];
+    const maxNumber = this.bless.length; // const _bless = this.bless[indexRandom(maxNumber)]
+
+    const _bless = this.bless[4];
     $('#js-fortune').text(_bless.fortune);
     $('#js-answerDestSub').html(_bless.sp);
+    const ytOpts = {
+      height: 360,
+      width: 640,
+      videoId: _bless.videoId
+    };
+
+    if (_bless.videoStart) {
+      ytOpts.startSeconds = _bless.videoStart;
+    } else {
+      ytOpts.startSeconds = 0;
+    }
 
     try {
-      let player = new YT.Player('ytplayer', {
-        height: '360',
-        width: '640',
-        videoId: _bless.videoId
-      });
+      ytOpts.events.onReady = () => {
+        player.playVideo();
+      };
+
+      let player = new YT.Player('ytplayer', ytOpts);
     } catch (msg) {
-      const videoTmp = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${_bless.videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      const videoTmp = `<iframe width="${ytOpts.width}" height="${ytOpts.height}" src="https://www.youtube.com/embed/${ytOpts.videoId}?start=${ytOpts.startSeconds}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
       $('.answer-mv').append(videoTmp);
     }
 
@@ -176,7 +189,7 @@ class RichForYou {
   }
 
   main() {
-    // this.devSet()
+    this.devSet();
     this.startGame();
     this.gameAnswer(); // this.devMode()
   }

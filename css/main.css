@@ -104,7 +104,7 @@ body {
     stroke: rgba(255, 255, 0, 0.8);
     fill: none; }
   .blessing.active .blessing__cir {
-    animation: countdown 10s linear forwards; }
+    animation: countdown 5s linear forwards; }
   .blessing .alert {
     margin-left: 15px;
     margin-right: 15px; }
