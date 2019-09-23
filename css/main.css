@@ -12,8 +12,12 @@ body {
     z-index: -1;
     content: url("../images/answer-bg.png") url("../images/buddha.png") url("../images/main-bg.jpg") url("../images/signing.png") url("../images/sprites-signing.png") url("../images/sign.png") ; }
 
+.pageTitle {
+  color: #fff;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.6)); }
+
 .wrap {
-  height: 90vh;
+  height: 70vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -41,7 +45,8 @@ body {
   height: 300px;
   display: inline-block;
   overflow: hidden;
-  background: url("../images/sprites-signing.png") no-repeat 2px -2px; }
+  background: url("../images/sprites-signing.png") no-repeat 2px -2px;
+  filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.5)); }
   .signing.active {
     animation: signPlay 3s 1s steps(5) infinite; }
 
