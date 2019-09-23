@@ -1,20 +1,28 @@
+html {
+  min-height: 100vh;
+  background-image: url("../images/base-bg.png");
+  background-repeat: repeat;
+  background-position: center center; }
+
 body {
   min-height: 100vh;
-  background-image: url("../images/main-bg.jpg");
+  background-image: url("../images/main-bg.png");
+  background-color: transparent;
   background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover; }
+  background-position: center top;
+  background-size: 200%; }
   body::after {
     position: absolute;
     width: 0;
     height: 0;
     overflow: hidden;
     z-index: -1;
-    content: url("../images/answer-bg.png") url("../images/buddha.png") url("../images/main-bg.jpg") url("../images/signing.png") url("../images/sprites-signing.png") url("../images/sign.png") ; }
+    content: url("../images/answer-bg.png") url("../images/buddha.png") url("../images/main-bg.png") url("../images/signing.png") url("../images/sprites-signing.png") url("../images/sign.png") ; }
 
 .pageTitle {
-  color: #fff;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.6)); }
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.6));
+  margin-left: 15px;
+  margin-right: 15px; }
 
 .wrap {
   height: 70vh;
@@ -284,4 +292,7 @@ body {
     height: 58px;
     opacity: 0; } }
 
-/*# sourceMappingURL=main.css.map */
+@media (min-width: 768px) {
+  body {
+    background-position: center bottom;
+    background-size: cover; } }
