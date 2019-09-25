@@ -118,6 +118,8 @@ body {
       transform: translate(-50%, -50%);
       animation: blessShine 3s ease-out infinite;
       z-index: 3; }
+  .blessing .buddhaName {
+    font-size: 1.5em; }
   .blessing__countdown {
     position: absolute;
     bottom: 34%;
