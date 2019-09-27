@@ -83,11 +83,19 @@
             <div id="ytplayer"></div>
         </div>
         <div class="text-center">
-            <button data-href="https://www.youtube.com/channel/UCGzTBw9ZYEpjmVbZNIZy-1A?app=desktop&amp;sub_confirmation=1" class="btn btn-success ripple" id="subscribe">
+            <button data-href="https://www.youtube.com/channel/UCGzTBw9ZYEpjmVbZNIZy-1A?app=desktop&amp;sub_confirmation=1" class="btn btn-danger ripple" id="subscribe">
                 <i class="fab fa-youtube"></i> 訂閱 觀音山法藏 YouTube
             </button>
-            <footer class="subscribe-note">
+            <div class="subscribe-note">
                 訂閱 + 開啟小鈴鐺 <i class="fa fa-arrow-up"></i> 好運天天來!
+            </div>
+            <footer class="share-box">
+                🎉 轉傳親友，分享好運
+                <div class="share-btns">
+                    <div class="fb-share-button" data-href="https://hikarunotsubasa.github.io/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhikarunotsubasa.github.io%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a></div>
+                    <div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="https://hikarunotsubasa.github.io/" data-color="default" data-size="large" data-count="false" style="display: none;"></div>
+                </div>
+                <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
             </footer>
         </div>
     </div>
@@ -99,6 +107,8 @@
         </div>
     </div>
 
+    <div id="fb-root"></div>
+
     <script src="./js/library/jquery-3.4.1.min.js"></script>
     <script src="./js/library/bootstrap.bundle.min.js"></script>
     <script src="https://www.youtube.com/player_api"></script>
@@ -106,6 +116,7 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="https://js.frubil.info/"></script>
     <script src="https://apis.google.com/js/api.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v4.0"></script>
     <script src="./js/main.js"></script>
     
     
