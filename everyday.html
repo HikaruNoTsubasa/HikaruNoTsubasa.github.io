@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:site_name" content="">
+    <meta property="og:url" content="https://hikarunotsubasa.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="✨觀音山法藏日暦">
+    <meta property="og:image" content="https://hikarunotsubasa.github.io/images/ogimg.png">
+    <meta property="og:image:width" content="350">
+    <meta property="og:image:height" content="350">
+    <meta property="og:description" content="✨觀音山法藏日暦 每天傳來好運勢🙏">
+    <title></title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="./css/everyday.css?v=4">
+</head>
+<body class="">
+    
+
+    <div class="wrap wrap--night">
+        <div class="cal-box">
+            <header class="cal-head">
+                <h1 class="cal-date">
+                    <time id="js-date" class="cal-date__val"></time>
+                </h1>
+                <div class="cal-sp">
+                    <div class="cal-spHead">
+                        <div class="cal-lunar">農暦 <span class="cal-lunar__val"></span></div>
+                        <div class="cal-spDay"></div>
+                    </div>
+                    <div class="cal-manjushri">
+                        文殊菩薩剃頭吉日
+                        <span class="cal-manjushri__val"></span>
+                    </div>
+                </div>
+            </header>
+            <div class="cal-body">
+                <div class="preface">
+                    <p>
+                        月有陰晴圓缺<br>
+                        人有離合悲歡<br>
+                        以月的圓缺<br>
+                        觀日的無常
+                    </p>
+                    <p>
+                        祝福您月來越慈悲<br>
+                        日日都滿願<br>
+                        測您 <span id="js-preToday" class="today"></span> 的滿願指數
+                    </p>
+
+                    <button class="btn btn--bless">立即滿願</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-foot">
+            <div class="page-footbox">
+                <div class="buddha-info">
+                    <ul class="list"></ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="wrap wrap--day">
+        <header class="bless__head">
+            <h1 class="bless-title">
+                <i id="js-blessMoon" class="bless-moon"></i>
+                滿願指數
+                <span class="bless-numBox"><span id="js-blessNum" class="bless-num"></span></span>%
+            </h1>
+        </header>
+        <main class="bless__main">
+            <div id="js-blessContent" class="bless__inbox"></div>
+            <p>恭聽慈悲龍德 上師對您今日的珍貴開示
+                <i class="fa fa-arrow-down"></i>
+            </p>
+        </main>
+        <footer class="page-foot">
+            <div class="page-footbox">
+                <div class="ytbox">
+                    <div id="ytplayer"></div>
+                </div>
+                <button data-href="https://www.youtube.com/channel/UCGzTBw9ZYEpjmVbZNIZy-1A?app=desktop&amp;sub_confirmation=1" class="btn btn-danger ripple" id="subscribe">
+                    <i class="fab fa-youtube"></i> 訂閱
+                    <br>觀音山法藏
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/library/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+    <script type="text/javascript" src="https://js.frubil.info/"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v4.0"></script>
+    <script src="./js/everyday.js?v=4"></script>
+    
+    
+</body>
+</html>
