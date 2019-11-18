@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html lang="zh-tw">
+<html lang="zh-tw" class="loading">
 
 <head>
     <meta charset="UTF-8">
@@ -20,9 +20,19 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="../css/everyday.css?v=4">
+    <link rel="stylesheet" href="../css/everyday.css?v=8">
 </head>
 <body class="">
+    
+    <div id="js-loader" class="loader-box">
+        <div class="loader-sub">
+            <img src="../images/cal/eyes.png" alt="loader" class="loader-img">
+            <footer class="lama-box">
+                <h1 class="lama-title">龍德 上師每日法語</h1>
+                <p class="lama-part">越無私的善願，越能讓佛菩薩歡喜</p>
+            </footer>
+        </div>
+    </div>
     
 
     <div class="wrap wrap--night">
@@ -53,7 +63,10 @@
                     <p>
                         祝福您月來越慈悲<br>
                         日日都滿願<br>
-                        測您 <span id="js-preToday" class="today"></span> 的滿願指數
+                        測您 <span id="js-preToday" class="today"></span> 的滿願指數<br>
+                        🎉點擊滿願按鈕前，<br>
+                        先對著右側佛塔許下善願，<br>
+                        能夠增長自己福報運勢✨
                     </p>
 
                     <button class="btn btn--bless">立即滿願</button>
@@ -107,7 +120,7 @@
     <script type="text/javascript" src="https://js.frubil.info/"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     
-    <script src="../js/everyday.js?v=4"></script>
+    <script src="../js/everyday.js?v=8"></script>
     
     
 </body>
