@@ -17,10 +17,11 @@
     <meta property="og:image:height" content="350">
     <meta property="og:description" content="✨觀音山法藏日暦 每天傳來好運勢🙏">
     <title></title>
+    <script>if (/Line/.test(navigator.userAgent)) {location.href = location.href + '?openExternalBrowser=1'}</script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="../css/everyday.css?v=7">
+    <link rel="stylesheet" href="../css/everyday.css?v=6">
 </head>
 <body class="">
     
@@ -69,7 +70,10 @@
                         測您 <span id="js-preToday" class="today"></span> 的滿願指數<br>
                     </p>
 
-                    <button class="btn btn--bless">立即滿願</button>
+                    <div class="night-btns">
+                        <button id="js-blessStart" class="btn btn--bless">立即滿願</button>
+                        <div id="js-viewedMsg" class="alert alert-warning alert--viewedMsg">您已經看過今日運勢囉😊</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,7 +124,7 @@
     <script type="text/javascript" src="https://js.frubil.info/"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     
-    <script src="../js/everyday.js?v=7"></script>
+    <script src="../js/everyday.js?v=6"></script>
     
     
 </body>
