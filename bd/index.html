@@ -67,8 +67,18 @@
         </div>
     
         <div id="homebox3" class="homebox-sub">
-        <h2>page3</h2>
-
+        <form id="js-stored-data" class="stored-data">
+  <div class="form-group">
+    <label for="userName">姓名</label>
+    <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="請輸入姓名" required>
+  </div>
+  <div class="form-group">
+    <label for="userWork">佛號次數</label>
+    <input type="number" min="1" step="1" class="form-control" id="userWork" placeholder="請輸入佛號次數" required>
+  </div>
+  <button type="submit" class="btn btn-primary">送出表單</button>
+  <div id="js-jqmeter"></div>
+</form>
         </div>
     
         <div id="homebox4" class="homebox-sub">
@@ -92,7 +102,9 @@
     
     
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./js/library/jplayer/jplayer/jquery.jplayer.min.js"></script>
+    <script src="./js/library/jqmeter.min.js"></script>
     <script src="./js/main.js?v=2"></script>
     
     
