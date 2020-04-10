@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
 
+
+
+
+
 <html lang="zh-tw">
 
 <head>
@@ -8,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta property="og:site_name" content="佛誕浴佛除瘟疫 萬人祈福齊響應">
+    <meta property="og:site_name" content="佛誕浴佛除瘟疫，萬人祈福齊響應">
     <meta property="og:url" content="https://hikarunotsubasa.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="✨觀音山吉祥籤 求籤超神準🙏">
@@ -16,7 +20,7 @@
     <meta property="og:image:width" content="350">
     <meta property="og:image:height" content="350">
     <meta property="og:description" content="2019 即將進入尾聲，想知道 2020 年您的運勢嗎？誠心祈請，立即抽籤，極感應加持！📢轉傳親友，分享好運，轉運更吉祥！">
-    <title>佛誕浴佛除瘟疫 萬人祈福齊響應</title>
+    <title>佛誕浴佛除瘟疫，萬人祈福齊響應</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
@@ -30,19 +34,34 @@
         </div>
     </div>
 
-    <h1 class="display-4 text-center pageTitle">
-        佛誕浴佛除瘟疫 萬人祈福齊響應
-    </h1>
+    <div class="container">
+        <h1 class="display-4 text-center pageTitle">
+            佛誕浴佛除瘟疫，萬人祈福齊響應
+        </h1>
+    </div>
 
     <div id="wrap" class="container wrap">
         <div class="row wrap_row">
             
 
             
-    
     <div id="js-home-box" class="home-box">
     
-        <div id="homebox1" class="homebox-sub">
+        <div id="homebox-init" class="homebox-sub">
+        <div class="bd-callout bd-callout-info init-pre">
+    <p class="preface">
+        浴佛可以淨化身心靈，解除痛苦憂傷，更能消除身語意一切業障，開啟智慧，功德無量，讓我們一同為消除新冠肺炎疫情而懺悔，祈禱，迴向，以真誠的心舀起一杓淨水浴佛，祈求天下無災、疫情消弭，人民平安健康。請跟隨引導念誦佛號，每點擊螢幕一下，就可以浴佛一次，一邊浴佛一邊念誦佛號。
+    </p>
+    <ol>
+        <li>南無本師釋迦牟尼佛</li>
+        <li>南無本師釋迦牟尼佛</li>
+        <li>南無本師釋迦牟尼佛</li>
+    </ol>
+</div>
+<button id="js-2bath" class="btn btn-block btn-info">下一頁</button>
+        </div>
+    
+        <div id="homebox-bath" class="homebox-sub">
         <img class="prince" src="images/maxresdefault.jpg" alt="buddha">
 <button id="js-bath" class="btn btn-info btn-block">
     浴佛 <span id="js-bath-current"></span><br>
@@ -51,7 +70,7 @@
 <div id="js-bath-audio" class="bath-audio"></div>
         </div>
     
-        <div id="homebox2" class="homebox-sub">
+        <div id="homebox-sing" class="homebox-sub">
         <img class="prince" src="images/maxresdefault.jpg" alt="buddha">
 <div class="alert alert-warning text-center">誠心稱唸偉大佛陀聖號10分鐘</div>
 <div class="blessing" id="js-blessing">
@@ -66,7 +85,7 @@
 <div id="js-long-audio" class="long-audio"></div>
         </div>
     
-        <div id="homebox3" class="homebox-sub">
+        <div id="homebox-form" class="homebox-sub">
         <form id="js-stored-data" class="stored-data">
   <div class="form-group">
     <label for="userName">姓名</label>
@@ -81,7 +100,7 @@
 </form>
         </div>
     
-        <div id="homebox4" class="homebox-sub">
+        <div id="homebox-verse" class="homebox-sub">
         <div id="js-answer" class="answer-box">
     <div class="answer-sub">
         <h1 id="js-answerTitle" class="answer-title"><span id="js-fortune" class="fortune-value"></span>恭誦迴向文</h1>
@@ -134,6 +153,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./js/library/jplayer/jplayer/jquery.jplayer.min.js"></script>
     <script src="./js/library/jqmeter.min.js"></script>
+    <script>
+        var homeNames = 'init,bath,sing,form,verse'.split(',')
+    </script>
     <script src="./js/main.js?v=3"></script>
     
     
